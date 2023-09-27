@@ -9,14 +9,12 @@ function App() {
     <div className="App">
       <header className="links">
       <Link to="/">Home</Link>
-          <Link to="/posts">Posts</Link>
           <Link to="/users/register">Registration</Link>
           <Link to="/users/login">Login</Link>
       </header>
       <h1>Stranger's Things:</h1>
       <Routes>
         <Route path="users/register" element={<Register />} />
-        <Route path="/posts" element={<AllPosts />} />
         <Route  path="/users/login" element={<Login />} />
       </Routes>
     </div>
