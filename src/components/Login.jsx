@@ -8,7 +8,7 @@ export default function Login() {
   console.log(username);
 
   const handleSubmit = async (e) => {
-    e.preventDeafult();
+    e.preventDefault();
     try {
       const response = await loginUser(username, password);
       const result = await response.json();
