@@ -1,16 +1,28 @@
-import { Link, Routes, Route } from "react-router-dom";
-import "./App.css";
-import AllPosts from "./components/Posts";
+
+import { useState } from 'react'
+import './App.css'
+import { Routes, Route } from "react-router-dom"
+import Posts from "./components/Posts"
+import SinglePost from './components/SinglePosts'
 
 function App() {
+  const [count, setCount] = useState(0)
+  
+
   return (
-    <div className="App">
-      <h1>Stranger's Things:</h1>
+    <>
+      
+      <h1 className="title">STRANGERS THINGS</h1>
+      <h4>(Possibly Stolen)</h4>
+      
       <Routes>
-        <Route path="/" element={<AllPosts />} />
+        <Route path="/" element={<Posts />} />
+        <Route path="/:id" element={<SinglePost />} />
       </Routes>
-    </div>
-  );
+      
+    </> 
+  )
+
 }
 
 export default App;
