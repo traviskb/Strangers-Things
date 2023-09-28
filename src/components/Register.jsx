@@ -1,27 +1,27 @@
 import { useState } from "react";
-import { loginUser } from "../API";
+import { registerUser } from "../API";
 
-export default function Login() {
-  const [error, setError] = useState(null);
+export default function Register() {
+  const [token, setToken] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
   console.log(username);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await loginUser(username, password);
-      const result = await response.json();
+      const response = await registerUser(username, password);
+      const result = response.json();
       console.log(result);
-      return result;
-    } catch (error) {
+      setToken(result.token);
+    } catch {
       setError(error.message);
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Login!</h2>
+      <h2>Sign Up!</h2>
       {error && <p>{error}</p>}
       <label>
         Username:{" "}
