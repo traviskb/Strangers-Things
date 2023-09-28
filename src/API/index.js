@@ -36,6 +36,7 @@ export const loginUser = async (username, password) => {
           password: password,
         }
       })
+    });
     const result = await response.json();
     console.log(result);
     // sessionStorage.token = result.data.token;
@@ -67,17 +68,5 @@ export async function fetchPost() {
   }
 };
 
-export const createPost = async (title, description) => {
-  try {
-    const response = await fetch(`${API_URL}/posts`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        user: {
-          username: username,
-          password: password,
-        }
-      })
+
 
