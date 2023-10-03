@@ -32,8 +32,17 @@ export const createPost = async (title, description) => {
         "Authorization": `Bearer ${Token}`
       },
       body: JSON.stringify({
+        post: {
         title,
         description,
+      }
       }),
     });
-
+    const result = await response.json();
+      console.log(result);
+      return result
+    } catch (err) {
+      console.error(err);
+    }
+  }
+  
