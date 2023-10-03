@@ -25,6 +25,7 @@ export const NewPostForm = ({ posts, setPosts }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+
       <label>
       {error && <p>{error}</p>}
       <input
@@ -41,7 +42,9 @@ export const NewPostForm = ({ posts, setPosts }) => {
       placeholder="description"
       onChange={(e) => setDescription(e.target.value)}
       />
+
       </label>
+
       <button>Submit</button>
     </form>
   );
