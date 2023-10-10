@@ -1,8 +1,10 @@
 import { Link, Routes, Route } from "react-router-dom";
 import "./App.css";
 import AllPosts from "./components/Posts";
+import SinglePost from "./components/SinglePosts";
 import Register from "./components/Register";
 import Login from "./components/Login";
+import { useState } from "react";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -18,7 +20,7 @@ function App() {
       <Routes>
         <Route path="users/register" element={<Register />} />
         <Route path="/users/login" element={<Login />} />
-        <Route path="/" element={<Posts />} />
+        <Route path="/" element={<AllPosts />} />
         <Route path="/:id" element={<SinglePost />} />
       </Routes>
     </div>
